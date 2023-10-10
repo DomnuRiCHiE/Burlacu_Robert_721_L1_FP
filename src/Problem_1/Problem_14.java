@@ -1,6 +1,5 @@
 package Problem_1;
 import java.util.ArrayList;
-
 import static Problem_1.Problem_13.roundedMarks;
 
 public class Problem_14 {
