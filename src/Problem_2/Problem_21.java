@@ -9,7 +9,7 @@ public class Problem_21 {
         else return -1;
 
         for(int i = 1; i < numbers.size(); i++) {
-            if(numbers.get(i) > greatestNumber) {
+            if(numbers.get(i) < greatestNumber) {
                 greatestNumber = numbers.get(i);
             }
         }

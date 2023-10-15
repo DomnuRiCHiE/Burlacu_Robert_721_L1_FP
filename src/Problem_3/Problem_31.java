@@ -5,7 +5,7 @@ import static Problem_3.Problem_3.fromNumberToArray;
 
 public class Problem_31 {
     public static ArrayList<Integer> sumOfTwoNumbers(ArrayList<Integer> number1, ArrayList<Integer> number2) {
-        int sum = 0, firstNumber, secondNumber;
+        int sum, firstNumber, secondNumber;
         ArrayList<Integer> finalSum;
 
         firstNumber = fromArrayToNumber(number1);
