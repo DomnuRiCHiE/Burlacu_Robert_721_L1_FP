@@ -2,6 +2,11 @@ package Problem_4;
 import java.util.ArrayList;
 
 public class Problem_43 {
+    /**
+     * Finds the most expensive usb driver's price
+     * @param usbDrive - list of usb drivers' prices
+     * @return the most expensive usb driver's price
+     */
     public static int mostExpensiveUsbDrive(ArrayList<Integer> usbDrive) {
         int mostExpensiveUsbDrive;
 

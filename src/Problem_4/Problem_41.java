@@ -2,6 +2,11 @@ package Problem_4;
 import java.util.ArrayList;
 
 public class Problem_41 {
+    /**
+     * Finds cheapest available keyboard
+     * @param keyboard - list of keyboard prices
+     * @return cheapest keyboard price
+     */
     public static int cheapestKeyboard(ArrayList<Integer> keyboard) {
         int cheapestKeyboard;
 
