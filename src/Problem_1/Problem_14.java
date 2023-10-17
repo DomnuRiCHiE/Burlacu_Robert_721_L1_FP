@@ -3,11 +3,18 @@ import java.util.ArrayList;
 import static Problem_1.Problem_13.roundedMarks;
 
 public class Problem_14 {
+    /**
+     * Finds the highest rounded up mark
+     * @param marks - arraylist of marks
+     * @return highest rounded up mark from arraylist
+     */
     public static int maximumRoundedMark(ArrayList<Integer> marks) {
         ArrayList<Integer> roundedMarks = roundedMarks(marks);
         int maximumMark;
 
-        if(!roundedMarks.isEmpty()) maximumMark = roundedMarks.get(0);
+        if(!roundedMarks.isEmpty()) {
+            maximumMark = roundedMarks.get(0);
+        }
         else return -1;
 
         for(int i = 1; i < marks.size(); i++) {
