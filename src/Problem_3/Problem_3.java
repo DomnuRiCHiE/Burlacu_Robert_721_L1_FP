@@ -31,19 +31,31 @@ public class Problem_3 {
 
     public static int fromArrayToNumber(ArrayList<Integer> array) {
         int number = 0;
+
         while(!array.isEmpty()) {
+            if(array.get(0) > 9) {
+                return -1;
+            }
+
             number = number * 10 + array.get(0);
             array.remove(0);
         }
+
         return number;
     }
 
     public static ArrayList<Integer> fromNumberToArray(int number) {
         ArrayList<Integer> array = new ArrayList<>();
+
+        if(number < 0) {
+            return null;
+        }
+
         while(number > 0) {
             array.addFirst(number % 10);
             number /= 10;
         }
+
         return array;
     }
 
