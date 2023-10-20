@@ -1,7 +1,5 @@
 package Problem_3;
 import java.util.ArrayList;
-import static Problem_3.Problem_3.fromArrayToNumber;
-import static Problem_3.Problem_3.fromNumberToArray;
 
 public class Problem_31 {
     /**
@@ -11,19 +9,19 @@ public class Problem_31 {
      * @return sum of the two numbers, as long as they have the same number of digits
      */
     public static ArrayList<Integer> sumOfTwoNumbers(ArrayList<Integer> number1, ArrayList<Integer> number2) {
-        int sum, firstNumber, secondNumber;
-        ArrayList<Integer> finalSum;
+        int overflow = 0;
+        ArrayList<Integer> finalSum = new ArrayList<>();
 
         if(number1.size() != number2.size()) return null;
 
-        firstNumber = fromArrayToNumber(number1);
-        secondNumber = fromArrayToNumber(number2);
-
-        if(firstNumber < 0 || secondNumber < 0) return null;
-
-        sum = firstNumber + secondNumber;
-        finalSum = fromNumberToArray(sum);
-
+        for(int i = number1.size() - 1; i >= 0; i--) {
+            int tempSum = number1.get(i) + number2.get(i);
+            finalSum.addFirst(tempSum % 10 + overflow);
+            overflow = tempSum / 10;
+        }
+        if(overflow > 0) {
+            finalSum.addFirst(overflow);
+        }
         return finalSum;
     }
 }

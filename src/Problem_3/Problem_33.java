@@ -1,7 +1,5 @@
 package Problem_3;
 import java.util.ArrayList;
-import static Problem_3.Problem_3.fromArrayToNumber;
-import static Problem_3.Problem_3.fromNumberToArray;
 
 public class Problem_33 {
     /**
@@ -11,17 +9,24 @@ public class Problem_33 {
      * @return the multiplication of the two numbers, as long as one is in array form and the other an array with only one digit
      */
     public static ArrayList<Integer> multiplicationOfTwoNumbers(ArrayList<Integer> number1, int number2) {
-        int multiplication, firstNumber;
-        ArrayList<Integer> finalMultiplication;
+        ArrayList<Integer> finalMultiplication = new ArrayList<>();
+        int overflow = 0;
 
         if(number2 > 9 || number2 < 0) {
             return null;
         }
 
-        firstNumber = fromArrayToNumber(number1);
-
-        multiplication = firstNumber * number2;
-        finalMultiplication = fromNumberToArray(multiplication);
+        for(int i = number1.size() - 1; i >= 0; i--) {
+            if(number1.get(i) * number2 > 9) {
+                finalMultiplication.addFirst((number1.get(i) * number2) % 10 + overflow);
+                overflow =  (number1.get(i) * number2) / 10;
+            }
+            else {
+                finalMultiplication.addFirst((number1.get(i) * number2) % 10 + overflow);
+                overflow =  (number1.get(i) * number2) / 10;
+            }
+        }
+        if(overflow > 0) finalMultiplication.addFirst(overflow);
 
         return finalMultiplication;
     }
